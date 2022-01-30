@@ -27,7 +27,6 @@ firebase.initializeApp({
 })
 
 let app
-console.log('db,',firebase.auth())
 firebase.auth().onAuthStateChanged(() => {
   if(!app) {
     app = new Vue({
