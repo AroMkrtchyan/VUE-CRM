@@ -21,7 +21,7 @@ export default {
 					name,
 				})
 			} catch (e) {
-				commit('setError', e)
+				 commit('setError', e)
 				throw e
 			}
 		},
@@ -30,8 +30,9 @@ export default {
 			return user ? user.uid : null
 		},
 
-		async logout() {
+		async logout({ commit }) {
 			await firebase.auth().signOut()
+			commit('clearInfo')
 		},
   }
 }
